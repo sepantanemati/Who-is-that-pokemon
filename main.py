@@ -1,4 +1,4 @@
-from flask import Flask , request, render_template, jsonify, redirect, url_for
+from flask import Flask , request, render_template, jsonify, redirect, url_for, session
 from hardmode import hard_mode
 from impossiblemode import imp_mode
 import requests
@@ -6,9 +6,9 @@ import random
 import os
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY", "dev_key_123")
 
 base_url = "https://pokeapi.co/api/v2/pokemon/"
-memory = {"name": "", "image": ""}
 
 pokemon_list = [
     "bulbasaur", "ivysaur", "venusaur", "charmander", "charmeleon", "charizard",
@@ -41,36 +41,32 @@ def get_info():
 
 
 @app.route("/", methods=["POST", "GET"])
-
-
-
 def send_info():
-    global memory
     answer_text = request.args.get('msg', "")
 
-    if memory["name"] == "":
+    if "name" not in session:
         image, name = get_info()
-        memory["image"] = image
-        memory["name"] = name
+        session["image"] = image
+        session["name"] = name
     if request.method == "POST":
         guessed_name = request.form.get("gs",)
         if "enters" in request.form:
-            if guessed_name.lower() == memory["name"].lower():
-                answer_text = f"you got it right, his name was:{memory['name']}"
+            if guessed_name.lower() == session["name"].lower():
+                answer_text = f"you got it right, his name was:{session['name']}"
                 image, name = get_info()
-                memory["image"] = image
-                memory["name"] = name
+                session["image"] = image
+                session["name"] = name
             else:
-                answer_text = f"wrong its name was:{memory['name']}"
+                answer_text = f"wrong its name was:{session['name']}"
                 image, name = get_info()
-                memory["image"] = image
-                memory["name"] = name
-        return redirect(url_for('send_info', msg=answer_text, answer=answer_text))
-    return render_template("index.html", answer=answer_text, pokemonimage=memory['image'])
+                session["image"] = image
+                session["name"] = name
+        return redirect(url_for('send_info', msg=answer_text))
+    return render_template("index.html", answer=answer_text, pokemonimage=session.get('image'))
+
 app.register_blueprint(hard_mode)
 app.register_blueprint(imp_mode)
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
-    
-

@@ -1,0 +1,171 @@
+.body{
+    background-color: #E1D9D1;
+
+}
+.main{
+    background-color: #5E778F;
+    height: auto;
+    border-radius: 5px;
+    padding: 40px 20px;
+}
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: #5E778F;
+    border-radius: 25px;
+    width: 500px;
+    height: 60px;
+    margin: 0 auto;
+    margin-bottom: 7px;
+    margin-top: 7px;
+}
+.chill{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E1D9D1;
+    border-radius:20px;
+    border: 2px solid #43586c;
+    cursor: pointer;
+    width: 120px;
+    height: 35px;
+    transition: 0.5s;
+    text-decoration: none;
+    color: black
+}
+.chill:hover{
+    height: 50px;
+    width: 140px;
+}
+.hard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E1D9D1;
+    border-radius:20px;
+    border: 2px solid #43586c;
+    cursor: pointer;
+    width:120px;
+    height: 35px;
+    transition: 0.5s;
+    text-decoration: none;
+    color: black;  
+}
+.hard:hover{
+    height: 50px;
+    width: 140px;
+}
+.impossible{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E1D9D1;
+    border-radius:20px;
+    border: 2px solid #43586c;
+    cursor: pointer;
+    width: 120px;
+    height: 35px;
+    transition: 0.5s;
+    text-decoration: none;
+    color: black;
+}
+.impossible:hover{
+    height: 50px;
+    width: 140px;
+}
+.inputbox{
+    display: flex;
+    justify-content: center;
+}
+.photos{
+    display: flex;
+    justify-content: center;
+    filter: brightness(0);
+}
+#inputboxdiv{
+    display: flex;
+    justify-content: center;
+}
+#inputbox {
+    width: 600px;
+    height: 25px;
+    text-align: center;
+    border-color: transparent;
+    background-color: #E1D9D1;
+    outline: none;
+    border-radius: 20px;
+    padding: 10px;
+    border: 2px solid #43586c;
+    margin-bottom: 15px;
+}
+#question{
+    font-family: sans-serif;
+    font-weight: 900;
+    font-size: 60px;
+    letter-spacing: -2px;
+    line-height: 1.0;
+    color: #E1D9D1;
+    margin: 5px 0;
+    text-transform: uppercase;
+
+}
+#answer{
+    font-family: sans-serif;
+    font-weight: 300;
+    color: #E1D9D1;
+}
+#submit input{
+    color: black;
+    background-color: #E1D9D1;
+    outline: none;
+    width: 90px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: bold;
+    border: 2px solid #43586c;
+    transition: transform 0.2s;
+}
+#submit input:hover {
+    transform: scale(1.1); 
+}
+#pokemonphoto{
+    display: flex;
+    justify-content: center;
+}
+#pointdiv{
+    display: flex;
+    justify-content: center;
+    background-color: #5E778F;
+    background-size: 15px 60px;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: auto;
+    margin-bottom: -15px;
+    z-index: 1; 
+    position: relative;
+    padding: 5px 15px;
+}
+#pointstext{
+    font-family: sans-serif;
+    font-weight: 700;
+    border-color: #43586c;
+    color: #E1D9D1;
+}
+#restart input{
+    color: black;
+    background-color: #E1D9D1;
+    outline: none;
+    width: 90px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: bold;
+    border: 2px solid #43586c;
+    transition: transform 0.2s;
+}
+#restart input:hover {
+    transform: scale(1.1); 
+}

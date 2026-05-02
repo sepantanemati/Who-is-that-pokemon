@@ -1,0 +1,138 @@
+.body{
+    background-color: #E1D9D1;
+
+}
+.main{
+    background-color: #5E778F;
+    height: 300px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: -30px;
+}
+.inputbox{
+    display: flex;
+    justify-content: center;
+}
+.photos{
+    display: flex;
+    justify-content: center;
+}
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: #5E778F;
+    border-radius: 25px;
+    width: 500px;
+    height: 60px;
+    margin: 0 auto;
+    margin-bottom: 7px;
+    margin-top: 7px;
+}
+.chill{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E1D9D1;
+    border-radius:20px;
+    border: 2px solid #43586c;
+    cursor: pointer;
+    width: 120px;
+    height: 35px;
+    transition: 0.5s;
+    text-decoration: none;
+    color: black
+}
+.chill:hover{
+    height: 50px;
+    width: 140px;
+}
+.hard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E1D9D1;
+    border-radius:20px;
+    border: 2px solid #43586c;
+    cursor: pointer;
+    width:120px;
+    height: 35px;
+    transition: 0.5s;
+    text-decoration: none;
+    color: black;  
+}
+.hard:hover{
+    height: 50px;
+    width: 140px;
+}
+.impossible{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E1D9D1;
+    border-radius:20px;
+    border: 2px solid #43586c;
+    cursor: pointer;
+    width: 120px;
+    height: 35px;
+    transition: 0.5s;
+    text-decoration: none;
+    color: black;
+}
+.impossible:hover{
+    height: 50px;
+    width: 140px;
+}
+#inputboxdiv{ 
+    display: flex;
+    justify-content: center;
+}
+#inputbox {
+    width: 600px;
+    height: 25px;
+    text-align: center;
+    border-color: transparent;
+    background-color: #E1D9D1;
+    outline: none;
+    border-radius: 20px;
+    padding: 10px;
+    border: 2px solid #43586c;
+    margin-bottom: 15px;
+}
+#question{
+    font-family: sans-serif;
+    font-weight: 900;
+    font-size: 60px;
+    letter-spacing: -2px;
+    line-height: 1.0;
+    color: #E1D9D1;
+    margin: 5px 0;
+    text-transform: uppercase;
+
+}
+#answer{
+    font-family: sans-serif;
+    font-weight: 300;
+    color: #E1D9D1;
+}
+#submit input{
+    color: black;
+    background-color: #E1D9D1  ;
+    outline: none;
+    width: 90px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: bold;
+    border: 2px solid #43586c;
+    transition: transform 0.2s;
+}
+#submit input:hover {
+    transform: scale(1.1); 
+}
+#pokemonphoto{
+    display: flex;
+    justify-content: center;
+}

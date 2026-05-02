@@ -1,0 +1,29 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='hardstyle.css') }}">
+  </head> 
+  <body class="body">
+      <nav class="menu" id="menunav">
+      <a class="chill" href="/">chillmode</a><a href="/hardmode" class="hard">hardmode</a><a href="/impossiblemode" class="impossible">impossiblemode</a>
+      </nav>
+    <div class="points" id="pointdiv">
+    <p class="points" id="pointstext">score:{{score}}   best:{{best}}</p>
+    </div>
+      <form method="post" class="main">
+        <p class="inputbox" id="question">guess the pokemon:</p> 
+        <div class="inputbox" id="inputboxdiv"><p> <input type="text" name="gs" class="inputbox" id="inputbox" /></p></div>
+        <p class="inputbox" id="submit"><input type="submit" name="enter" value="enter"/></p>
+        <p class="inputbox" id="answer">{{answer}}</p>
+        {% if answer == "you are out of points" %}
+        <div class="inputbox" id="restart"><input type="submit" name="restart" value="restart"></div>
+        {% endif %}
+      </form>
+      <div class="photos">
+        <img class="photos" id="pokemonphoto" src="{{pokemonimage}}" alt="{{name}}">
+      </div>
+  </body>
+  </html>

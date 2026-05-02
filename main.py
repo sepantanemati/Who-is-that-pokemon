@@ -69,6 +69,6 @@ def send_info():
 app.register_blueprint(hard_mode)
 app.register_blueprint(imp_mode)
 
-app.run(host="0.0.0.0", port=5001, debug= True)
+app.run()
     
 

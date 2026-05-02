@@ -3,6 +3,7 @@ from hardmode import hard_mode
 from impossiblemode import imp_mode
 import requests
 import random
+import os
 
 app = Flask(__name__)
 
@@ -55,20 +56,22 @@ def send_info():
         guessed_name = request.form.get("gs",)
         if "enters" in request.form:
             if guessed_name.lower() == memory["name"].lower():
-                answer_text = f"you got it right, his name was:{memory["name"]}"
+                answer_text = f"you got it right, his name was:{memory['name']}"
                 image, name = get_info()
                 memory["image"] = image
                 memory["name"] = name
             else:
-                answer_text = f"wrong its name was:{memory["name"]}"
+                answer_text = f"wrong its name was:{memory['name']}"
                 image, name = get_info()
                 memory["image"] = image
                 memory["name"] = name
         return redirect(url_for('send_info', msg=answer_text, answer=answer_text))
-    return render_template("index.html", answer=answer_text, pokemonimage=memory["image"])
+    return render_template("index.html", answer=answer_text, pokemonimage=memory['image'])
 app.register_blueprint(hard_mode)
 app.register_blueprint(imp_mode)
 
-app.run(host="0.0.0.0", port=5001, debug= True)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
     
 

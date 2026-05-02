@@ -61,7 +61,7 @@ def send_info_hard():
                 memory["image"] = "https://i.postimg.cc/Xv00JJYr/GAME-OVER.png" 
                 memory["name"] = "GAMEOVER"
             elif guessed_name.lower() == memory["name"].lower():
-                answer_text = f"you got it right, his name was:{memory["name"]}"
+                answer_text = f"you got it right, his name was:{memory['name']}"
                 image, name = get_info()
                 memory["image"] = image
                 memory["name"] = name
@@ -70,7 +70,7 @@ def send_info_hard():
                     record = point
             
             else:
-                answer_text = f"wrong its name was:{memory["name"]}"
+                answer_text = f"wrong its name was:{memory['name']}"
                 image, name = get_info()
                 memory["image"] = image
                 memory["name"] = name
@@ -78,7 +78,7 @@ def send_info_hard():
         elif "restart" in request.form:
             point = 10
         return redirect(url_for('imp_mode.send_info_hard', msg=answer_text, answer=answer_text))       
-    return render_template("impossible.html", answer=answer_text, pokemonimage=memory["image"], score = point,best = record)
+    return render_template("impossible.html", answer=answer_text, pokemonimage=memory['image'], score = point,best = record)
 
 
     

@@ -3,6 +3,7 @@ from hardmode import hard_mode
 from impossiblemode import imp_mode
 import requests
 import random
+import os
 
 app = Flask(__name__)
 
@@ -68,7 +69,8 @@ def send_info():
     return render_template("index.html", answer=answer_text, pokemonimage=memory["image"])
 app.register_blueprint(hard_mode)
 app.register_blueprint(imp_mode)
-
-app.run()
+if __name__ = "__main__":
+    port = int(os.environ.get("PORT", 5000)
+    app.run(host='0.0.0.0', port=port)
     
 
